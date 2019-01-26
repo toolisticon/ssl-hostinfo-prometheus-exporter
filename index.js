@@ -97,8 +97,10 @@ function startPrometheusListener () {
 }
 
 module.exports = exports = {
+  config: config,
   updateRouteInfo: updateRouteInfo,
   updateRoutesInfo: updateRoutesInfo,
+  resetRouteInfo: prometheus.reset,
   startPrometheusListener: startPrometheusListener,
   logger: log
 };

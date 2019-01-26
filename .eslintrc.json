@@ -1,0 +1,18 @@
+{
+  "extends": "semistandard",
+  "env": {
+    "jasmine": true
+  },
+  "plugins": [
+    "jasmine"
+  ],
+  "rules": {
+    "prefer-const": "error",
+    "block-scoped-var": "error",
+    "prefer-template": "warn",
+    "no-use-before-define": [
+      "error",
+      "nofunc"
+    ]
+  }
+}

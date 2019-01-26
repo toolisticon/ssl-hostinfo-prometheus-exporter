@@ -1,0 +1,10 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "8"
+  - "10"
+install: npm run clean
+
+script:
+   - npm run test

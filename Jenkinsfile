@@ -10,7 +10,7 @@ def nodeJS = new de.holisticon.ci.jenkins.NodeJS()
 def git = new de.holisticon.ci.jenkins.Git()
 def notify = new de.holisticon.ci.jenkins.Notify()
 
-def pushDocker = "${env.push_docker_image}"
+def pushDocker = "${env.push_docker_image}".toBoolean()
 
 node {
     def image

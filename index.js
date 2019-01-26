@@ -8,7 +8,7 @@ const prometheus = require('./lib/prometheus');
 
 const baseUrl = 'https://http-observatory.security.mozilla.org/api/v1/analyze';
 
-async function triggerScan (hostname) {
+async function triggerScan(hostname) {
   const options = {
     method: 'POST',
     uri: `${baseUrl}?host=${hostname}&rescan=true&hidden=true`
@@ -18,7 +18,7 @@ async function triggerScan (hostname) {
   request(options);
 }
 
-async function receiveScanResult (hostname, additionalMetadata = {}) {
+async function receiveScanResult(hostname, additionalMetadata = {}) {
   log.info(`Reading scan results for ${hostname}`);
   const options = {
     method: 'GET',
@@ -54,15 +54,27 @@ async function receiveScanResult (hostname, additionalMetadata = {}) {
 }
 
 /**
- *
+ * Checks a single url 
+ * 
+ * @param {String} hostname - hostname to check
+ * @param {Object} additionalMetadata - additional key-value based metadata
+ */
+async function updateRouteInfo(hostname, additionalMetadata) {
+  triggerScan(hostname);
+  // defer read results
+  setTimeout(() => receiveScanResult(hostname, additionalMetadata), 200);
+}
+/**
+ * Checks a list of urls
+ * 
  * @param {Array} hostnames - hostnames to check
  * @param {Object} additionalMetadata - additional key-value based metadata
  */
-async function updateRoutesInfo (hostnames, additionalMetadata) {
+async function updateRoutesInfo(hostnames, additionalMetadata) {
   log.info(`Triggering scan for ${hostnames}`);
+  // reset data on route update
+  prometheus.reset();
   hostnames.forEach((hostname) => {
-    // reset data on route update
-    prometheus.reset();
     triggerScan(hostname);
     // defer read results
     setTimeout(() => receiveScanResult(hostname, additionalMetadata), 200);
@@ -70,7 +82,7 @@ async function updateRoutesInfo (hostnames, additionalMetadata) {
 }
 
 // start http server
-function startPrometheusListener () {
+function startPrometheusListener() {
   const server = http.createServer((req, res) => {
     switch (req.url) {
       case '/':
@@ -85,6 +97,7 @@ function startPrometheusListener () {
 }
 
 module.exports = exports = {
+  updateRouteInfo: updateRouteInfo,
   updateRoutesInfo: updateRoutesInfo,
   startPrometheusListener: startPrometheusListener,
   logger: log

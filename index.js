@@ -86,5 +86,6 @@ function startPrometheusListener () {
 
 module.exports = exports = {
   updateRoutesInfo: updateRoutesInfo,
-  startPrometheusListener: startPrometheusListener
+  startPrometheusListener: startPrometheusListener,
+  logger: log
 };

@@ -1,3 +1,14 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.0...v0.2.1) (2019-01-26)
+
+
+### Bug Fixes
+
+* **Config:** Resolve config errors ([69ea36f](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/69ea36f))
+* **Reset:** Reset only for all update, not before checking one url ([4e25971](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/4e25971))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/142ccc8...v0.2.0) (2019-01-26)
 

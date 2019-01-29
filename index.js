@@ -100,6 +100,7 @@ module.exports = exports = {
   config: config,
   updateRouteInfo: updateRouteInfo,
   updateRoutesInfo: updateRoutesInfo,
+  updateHosts: prometheus.updateHosts,
   resetRouteInfo: prometheus.reset,
   startPrometheusListener: startPrometheusListener,
   logger: log

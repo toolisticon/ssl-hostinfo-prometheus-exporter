@@ -26,6 +26,23 @@ describe('prometheus', () => {
     prometheus.init();
   });
 
+  it('should remove not used used', () => {
+    prometheus.addMozillaMetric({ url: 'host1', quantile: 1 });
+    prometheus.addMozillaMetric({ url: 'host2', quantile: 2 });
+    prometheus.addMozillaMetric({ url: 'host3', quantile: 3 });
+    prometheus.addExpireMetric({ url: 'host1', quantile: 1 });
+    prometheus.addExpireMetric({ url: 'host2', quantile: 2 });
+    prometheus.addExpireMetric({ url: 'host3', quantile: 3 });
+    prometheus.addDetailsMetric({ url: 'host1', quantile: 1 });
+    prometheus.addDetailsMetric({ url: 'host2', quantile: 2 });
+    prometheus.addDetailsMetric({ url: 'host3', quantile: 3 });
+    prometheus.updateHosts(['host1', 'host3']);
+    const result = prometheus.renderMetrics();
+    expect(result.indexOf('security_ssl_mozilla_observatory{url="host2",quantile="2",} 2.0') < 0).toBeTruthy();
+    expect(result.indexOf('security_ssl_expire_days_remaining{url="host2",quantile="2",} 2.0') < 0).toBeTruthy();
+    expect(result.indexOf('security_ssl_details{url="host2",quantile="2",} 2.0') < 0).toBeTruthy();
+  });
+
   describe('mozilla http observatory', () => {
     it('should add unknown score if invalid request', () => {
       prometheus.addMozillaMetric({});

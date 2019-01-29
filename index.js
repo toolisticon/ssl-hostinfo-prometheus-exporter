@@ -73,7 +73,7 @@ async function updateRouteInfo (hostname, additionalMetadata) {
 async function updateRoutesInfo (hostnames, additionalMetadata) {
   log.info(`Triggering scan for ${hostnames}`);
   // reset data on route update
-  prometheus.reset();
+  prometheus.updateHosts(hostnames);
   hostnames.forEach((hostname) => {
     triggerScan(hostname);
     // defer read results

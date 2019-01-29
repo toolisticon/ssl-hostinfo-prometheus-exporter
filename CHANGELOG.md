@@ -1,10 +1,15 @@
-<a name="0.3.0"></a>
-# [0.3.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.1...v0.3.0) (2019-01-26)
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.1...v0.3.1) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Hosts:** Should remmove old entries and preserve existing info ([57f1bc2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/57f1bc2))
 
 
 ### Features
 
-* **API:** Expose more pulic methods ([0a8183a](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/0a8183a))
+* **API:** Expose more pulic methods ([35cc4d2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/35cc4d2))
 
 
 

@@ -1,3 +1,13 @@
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.1...v0.3.2) (2019-01-29)
+
+
+### Bug Fixes
+
+* **API:** Exposing updateHosts ([0b4e122](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/0b4e122))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.1...v0.3.1) (2019-01-29)
 

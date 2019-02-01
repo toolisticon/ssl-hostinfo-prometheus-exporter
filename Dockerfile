@@ -2,13 +2,17 @@ FROM centos/s2i-base-centos7
 
 ENV SUMMARY="SSL verify"
 ENV DESCRIPTION="Application runtime for SSL Verifier"
+ENV AUTHOR="Holisticon AG"
 ENV TZ="Europe/Berlin"
 ENV NVM_DIR="$HOME/.nvm"
 
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \
+      version="$VERSION" \
+      author="$AUTHOR" \
       io.k8s.description="$DESCRIPTION" \
       io.k8s.display-name="sslverify" \
+      io.k8s.tags="ssl,certificates" \
       com.redhat.component="sslverify-container"\
       org.label-schema.license=MIT
 

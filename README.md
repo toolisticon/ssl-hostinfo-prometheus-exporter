@@ -44,13 +44,7 @@ You can override the config via environment variables:
 
 ## Troubleshooting
 
-If the service account does not have access to projects, you will see this message
-```
-Logged into "https://...:8443" as "system:serviceaccount:security:sslverify" using the token provided.
-
-You don't have any projects. Contact your system administrator to request a project.
-Welcome! See 'oc help' to get started.
-```
+TBD
 
 ## Development
 

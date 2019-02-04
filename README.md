@@ -5,6 +5,8 @@
 [![Build Status](https://jenkins.holisticon.de/buildStatus/icon?job=toolisticon/ssl-hostinfo-prometheus-exporter/master)](https://jenkins.holisticon.de/blue/organizations/jenkins/toolisticon%2Fssl-hostinfo-prometheus-exporter/branches/)
 [![Docker Build Status](https://img.shields.io/docker/automated/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
 [![npm version](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
+[![npm downloads](https://img.shields.io/npm/dm/ssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/ssl-hostinfo-prometheus-exporter)
+[![npm downloads](https://img.shields.io/npm/dt/ssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/ssl-hostinfo-prometheus-exporter)
 [![Docker Stars](https://img.shields.io/docker/stars/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://greenkeeper.io/)
 
@@ -24,6 +26,8 @@ This nodejs application assumes that you define a list of urls to check via envi
 export URLS_TO_CHECK=app1.sample.com,app2.sample.com
 ssl-hostinfo-prom
 ```
+
+## Sample Values
 
 The metrics are available via via localhost:9000 :
 

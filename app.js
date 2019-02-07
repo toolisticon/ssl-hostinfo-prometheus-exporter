@@ -1,5 +1,5 @@
 const CronJob = require('cron').CronJob;
-const log = require('./lib/log');
+const log = require('./lib/logger');
 const config = require('./lib/config');
 const updateRoutesInfo = require('./.').updateRoutesInfo;
 const startPrometheusListener = require('./.').startPrometheusListener;

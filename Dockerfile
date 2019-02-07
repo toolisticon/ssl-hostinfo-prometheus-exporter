@@ -36,7 +36,7 @@ RUN export NVM_DIR="$HOME/.nvm" && mkdir -p $NVM_DIR && \
   /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
   mv $HOME/bin/entrypoint.sh /usr/local/bin/entrypoint.sh && \
   /usr/bin/fix-permissions /usr/local/bin/* && chmod +x /usr/local/bin/* && \
- /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && /usr/bin/fix-permissions ${HOME}/.kube/ && \
+ /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
  chown -R $USER:$(id -gn $USER) /opt/app-root/src/.config
 
 USER 1000

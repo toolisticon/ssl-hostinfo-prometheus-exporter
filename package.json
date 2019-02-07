@@ -53,6 +53,7 @@
   "dependencies": {
     "cron": "^1.6.0",
     "moment": "^2.23.0",
+    "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "ssl-checker": "^1.2.1"
   },

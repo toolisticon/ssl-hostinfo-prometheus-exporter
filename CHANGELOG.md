@@ -1,3 +1,13 @@
+<a name="0.3.4"></a>
+## [0.3.4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.3...v0.3.4) (2019-02-07)
+
+
+### Bug Fixes
+
+* **Init-Error:** Resolve startup error from typo ([e9b8442](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/e9b8442))
+
+
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.2...v0.3.3) (2019-02-01)
 

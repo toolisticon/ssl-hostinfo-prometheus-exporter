@@ -37,7 +37,7 @@ node {
                 // Docker Publish
                 if (pushDocker) {
                     docker.withRegistry('https://registry-1.docker.io/v2/', 'docker-hub-holisticon') {
-                    image.push('latest')
+                        image.push('latest')
                     }
                 }
             } else {

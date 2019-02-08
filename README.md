@@ -2,7 +2,6 @@
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/toolisticon/ssl-hostinfo-prometheus-exporter.svg?branch=master)](https://travis-ci.org/toolisticon/ssl-hostinfo-prometheus-exporter)
-[![Build Status](https://jenkins.holisticon.de/buildStatus/icon?job=toolisticon/ssl-hostinfo-prometheus-exporter/master)](https://jenkins.holisticon.de/blue/organizations/jenkins/toolisticon%2Fssl-hostinfo-prometheus-exporter/branches/)
 [![Docker Build Status](https://img.shields.io/docker/automated/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
 [![npm version](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
 [![npm downloads](https://img.shields.io/npm/dm/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)

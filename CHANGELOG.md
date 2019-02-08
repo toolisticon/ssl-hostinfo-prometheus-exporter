@@ -1,4 +1,13 @@
-<a name="0.3.4"></a>
+# [0.4.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.4...v0.4.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Docker:** Corrected docker error ([d41a3e9](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/d41a3e9))
+* **Start:** Correct app start error ([b35209d](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/b35209d))
+
+
+
 ## [0.3.4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.3...v0.3.4) (2019-02-07)
 
 
@@ -8,12 +17,10 @@
 
 
 
-<a name="0.3.3"></a>
 ## [0.3.3](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.2...v0.3.3) (2019-02-01)
 
 
 
-<a name="0.3.2"></a>
 ## [0.3.2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.3.1...v0.3.2) (2019-01-29)
 
 
@@ -23,7 +30,6 @@
 
 
 
-<a name="0.3.1"></a>
 ## [0.3.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.1...v0.3.1) (2019-01-29)
 
 
@@ -38,7 +44,6 @@
 
 
 
-<a name="0.2.1"></a>
 ## [0.2.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.2.0...v0.2.1) (2019-01-26)
 
 
@@ -49,7 +54,6 @@
 
 
 
-<a name="0.2.0"></a>
 # [0.2.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/142ccc8...v0.2.0) (2019-01-26)
 
 

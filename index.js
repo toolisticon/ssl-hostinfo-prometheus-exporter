@@ -26,9 +26,13 @@ async function receiveScanResult (hostname, additionalMetadata = {}) {
     json: true
   };
   const response = await request(options);
-  response.url = hostname;
-  response.quantile = response.score;
-  prometheus.addMozillaMetric(response, additionalMetadata);
+  if (response && response.score) {
+    response.url = hostname;
+    response.quantile = response.score;
+    prometheus.addMozillaMetric(response, additionalMetadata);
+  } else {
+    log.info('Skipping invalid response for mozilla scoring');
+  }
   // add cert metric
   sslChecker(hostname).then((result) => {
     result.url = hostname;

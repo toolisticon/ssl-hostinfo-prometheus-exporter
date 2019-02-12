@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.4.1...v1.0.0) (2019-02-12)
+
+
+### Bug Fixes
+
+* **Mozilla Scoring:** Checking response before overwrite ([a89b329](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a89b329))
+
+
+
 ## [0.4.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.4.0...v0.4.1) (2019-02-08)
 
 

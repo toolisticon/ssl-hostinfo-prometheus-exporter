@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.0...v1.0.1) (2019-02-28)
+
+
+### Bug Fixes
+
+* **NodeJS:** Fix nodejs v8 not found error ([409744f](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/409744f))
+
+
+### Features
+
+* **Testing:** Adding end2end testing for docker image via prometheus ([e66c0ae](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/e66c0ae))
+
+
+
 # [1.0.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v0.4.1...v1.0.0) (2019-02-12)
 
 

@@ -4,3 +4,6 @@ node_modules
 coverage
 .nyc_output
 npm-debug.log
+target
+__pycache__
+*.pyc

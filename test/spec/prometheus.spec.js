@@ -1,4 +1,4 @@
-const prometheus = require('../lib/prometheus');
+const prometheus = require('../../lib/prometheus');
 
 const validData = JSON.parse(`
 {  

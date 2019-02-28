@@ -16,18 +16,25 @@ node {
     def image
 
     try {
-        stage('Checkout') {
-            deleteDir()
+        stage('Prepare') {
             checkout scm
+            sh "pip install --user -r test/setup/test-requirements.txt"
         }
 
         stage('Build') {
             image = docker.build('toolisticon/ssl-hostinfo-prometheus-exporter')
+            sh "cd test/setup && docker-compose up -d"
             nodeJS.nvmRun('clean')
         }
 
         stage('Test') {
-           nodeJS.nvmRun('test')
+            nodeJS.nvmRun('jasmine-test')
+        }
+
+        stage('End2End Test') {
+            sh "pytest test/end2end/test_*.py --junitxml=target/reports/junit.xml"
+            junit 'target/reports/*.xml'
+            sh "cd test/setup && docker-compose rm -f -s -v && docker volume prune -f || true"
         }
 
         stage('Deploy') {

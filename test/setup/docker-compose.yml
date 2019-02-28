@@ -1,0 +1,56 @@
+version: '3.1'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.1.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    tmpfs:
+      - /prometheus:mode=777,size=500m,uid=65534,gid=65534
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+    restart: always
+    links:
+      - sslverifier:verifier
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9090"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+
+  sslverifier:
+    image: toolisticon/ssl-hostinfo-prometheus-exporter
+    container_name: sslverifier
+    environment:
+      - URLS_TO_CHECK=google.de,apple.com
+    ports:
+      - 9000:9000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+
+  node-exporter:
+    image: prom/node-exporter
+    container_name: nodeexporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    restart: always
+    deploy:
+      mode: global

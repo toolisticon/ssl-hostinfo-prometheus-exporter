@@ -4,7 +4,15 @@ language: node_js
 node_js:
   - "8"
   - "10"
-install: npm run clean
+services:
+  - docker
 
+install:
+  - docker build -t toolisticon/ssl-hostinfo-prometheus-exporter .
+  - cd test/setup && docker-compose up -d && cd ../..
+  - npm run clean
+before_script:
+  - pip install --user -r test/setup/test-requirements.txt
 script:
-   - npm run test
+   - npm run jasmine-test
+   - pytest test/end2end/test_*.py

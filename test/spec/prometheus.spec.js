@@ -89,4 +89,13 @@ describe('prometheus', () => {
       expect(result.indexOf('security_ssl_details{quantile="200",key1="a",key2="b",} 200.0') >= 0).toBeTruthy();
     });
   });
+
+  it('should remove undefined data', () => {
+    prometheus.addMozillaMetric({ url: 'host1', undefined });
+    prometheus.addMozillaMetric({ url: 'host2', undefined });
+    prometheus.updateHosts(['host1', 'host2']);
+    const result = prometheus.renderMetrics();
+    expect(result.indexOf('security_ssl_mozilla_observatory{url="host1",quantile="2",}') < 0).toBeTruthy();
+    expect(result.indexOf('security_ssl_mozilla_observatory{url="host2",quantile="2",}') < 0).toBeTruthy();
+  });
 });

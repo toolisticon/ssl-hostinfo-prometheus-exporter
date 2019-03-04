@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.1...v1.0.2) (2019-03-04)
+
+
+### Bug Fixes
+
+* **Undefined-Response:** Ignore undefined raw data ([86e1e5b](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/86e1e5b))
+
+
+
 ## [1.0.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.0...v1.0.1) (2019-02-28)
 
 

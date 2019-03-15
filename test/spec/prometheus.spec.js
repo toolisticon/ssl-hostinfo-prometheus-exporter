@@ -1,7 +1,7 @@
 const prometheus = require('../../lib/prometheus');
 
 const validData = JSON.parse(`
-{  
+{
     "algorithm_version":2,
     "end_time":"Fri, 18 Jan 2019 09:46:07 GMT",
     "grade":"D",
@@ -53,6 +53,11 @@ describe('prometheus', () => {
       prometheus.addMozillaMetric({ quantile: 1 }, { key1: 'a', key2: 'b' });
       const result = prometheus.renderMetrics();
       expect(result.indexOf('security_ssl_mozilla_observatory{quantile="1",key1="a",key2="b",} 1.0') >= 0).toBeTruthy();
+    });
+    it('should drop - from labels', () => {
+      prometheus.addMozillaMetric({ quantile: 1 }, { 'key-1': 'a', 'key.2': 'b' });
+      const result = prometheus.renderMetrics();
+      expect(result.indexOf('security_ssl_mozilla_observatory{quantile="1",key_1="a",key_2="b",} 1.0') >= 0).toBeTruthy();
     });
     it('should add additional data objects', () => {
       prometheus.addMozillaMetric({ quantile: 1 }, { key1: 'a', key2: 'b' });

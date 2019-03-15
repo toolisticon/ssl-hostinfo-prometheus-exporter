@@ -33,6 +33,7 @@ node {
 
         stage('End2End Test') {
             sh "pytest test/end2end/test_*.py --junitxml=target/reports/junit.xml"
+            sh "curl -s localhost:9000 | docker exec -i prometheus promtool check metrics"
             junit 'target/reports/*.xml'
             sh "cd test/setup && docker-compose rm -f -s -v && docker volume prune -f || true"
         }

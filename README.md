@@ -42,8 +42,46 @@ You can override the config via environment variables:
    URLS_TO_CHECK: // list of urls
    SERVER_PORT: // set desired port for prometheus endpoint, defaults to 9000
    CRON: // set cron pattern, default is '0 0 * * * *',
-   LOG_LEVEL: // set log level, default is 'ERROR' ('INFO' outputs details info)
+   LOG_LEVEL: // set log level, default is 'ERROR' ('INFO' outputs details info),
+   CONSOLE_LOG: // set to true to omit logging to file, otherwise logs will be written to `logs` dir
 ```
+
+Sample:
+```
+URLS_TO_CHECK=url1.sample.com,url2.sample.com LOG_LEVEL=INFO CONSOLE_LOG=true node app.js 
+```
+Will produce the following output:
+```
+{"pid":65072,"msg":"[log4bro] Logger is: in-prod=false, in-docker:true, level=DEBUG, skipDebug=false","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.443Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Start reading route information.","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.563Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Triggering scan for url1.sample.com,url2.sample.com","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.563Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Triggering scan for url1.sample.com","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.563Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Triggering scan for url2.sample.com","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.566Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"prometheus-exporter listening at 9000","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.569Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Reading scan results for url1.sample.com","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.769Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Reading scan results for url2.sample.com","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:20.770Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Skipping invalid response for mozilla scoring","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:21.206Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+{"pid":65072,"msg":"Skipping invalid response for mozilla scoring","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:21.208Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
+```
+
+And 
+```
+URLS_TO_CHECK=url1.sample.com,url2.sample.com LOG_LEVEL=INFO node app.js 
+```
+creates this output:
+```
+INFO @ 2019-04-02T13:57:42.181Z : [log4bro] Logger is: in-prod=false, in-docker:false, level=DEBUG, skipDebug=false
+INFO @ 2019-04-02T13:57:42.301Z : Start reading route information.
+INFO @ 2019-04-02T13:57:42.301Z : Triggering scan for url1.sample.com,url2.sample.com
+INFO @ 2019-04-02T13:57:42.301Z : Triggering scan for url1.sample.com
+INFO @ 2019-04-02T13:57:42.304Z : Triggering scan for url2.sample.com
+INFO @ 2019-04-02T13:57:42.307Z : prometheus-exporter listening at 9000
+INFO @ 2019-04-02T13:57:42.507Z : Reading scan results for url1.sample.com
+INFO @ 2019-04-02T13:57:42.508Z : Reading scan results for url2.sample.com
+INFO @ 2019-04-02T13:57:43.001Z : Skipping invalid response for mozilla scoring
+INFO @ 2019-04-02T13:57:43.024Z : Skipping invalid response for mozilla scoring
+```
+and the logs in JSON format within the directy `logs`
 
 ## Troubleshooting
 

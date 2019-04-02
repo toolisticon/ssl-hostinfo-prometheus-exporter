@@ -1,8 +1,11 @@
 const CronJob = require('cron').CronJob;
+const pkg = require('./package.json');
 const log = require('./lib/logger');
 const config = require('./lib/config');
 const updateRoutesInfo = require('./.').updateRoutesInfo;
 const startPrometheusListener = require('./.').startPrometheusListener;
+
+log.info('ssl-hostinfo-prometheus-exporter info', { version: pkg.version });
 
 async function triggerUpdate () {
   log.info('Start reading route information.');

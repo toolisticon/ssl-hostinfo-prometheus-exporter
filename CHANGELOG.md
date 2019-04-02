@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.2...v1.1.0) (2019-04-02)
+
+
+### Features
+
+* **End2End-Testing:** Using promtool for syntax checking ([5870924](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/5870924))
+* **Logging:** Use logging framework which is ELK-compatible ([a1d51a0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a1d51a0))
+
+
+
 ## [1.0.2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.1...v1.0.2) (2019-03-04)
 
 

@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.1.0...v1.2.0) (2019-04-27)
+
+
+### Bug Fixes
+
+* **Build:** Use new prometheus docker image for end2end testing ([a0b3d38](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a0b3d38))
+
+
+### Features
+
+* **Monitoring:** Adding promtool to docker image ([49634c9](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/49634c9))
+
+
+
 # [1.1.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.0.2...v1.1.0) (2019-04-02)
 
 

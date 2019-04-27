@@ -22,7 +22,7 @@ USER root
 # Copy code
 ADD . $HOME
 
-# Upgrade packages and clean up cache 
+# Upgrade packages and clean up cache
 RUN yum -y update && rm -rf /tmp/setup && yum clean all && rm -rf /var/cache/yum
 
 # Adding Node Version manager and install app
@@ -33,7 +33,7 @@ RUN export NVM_DIR="$HOME/.nvm" && mkdir -p $NVM_DIR && \
   chown -R default $HOME && \
   rm -rf $HOME/node_modules/ && cd $HOME && npm i  && \
   /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
-  mv $HOME/bin/entrypoint.sh /usr/local/bin/entrypoint.sh && \
+  mv $HOME/bin/* /usr/local/bin/ && \
   /usr/bin/fix-permissions /usr/local/bin/* && chmod +x /usr/local/bin/* && \
  /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
  chown -R $USER:$(id -gn $USER) /opt/app-root/src/.config

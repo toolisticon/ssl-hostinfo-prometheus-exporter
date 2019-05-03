@@ -16,4 +16,4 @@ before_script:
 script:
    - npm run jasmine-test
    - pytest test/end2end/test_*.py
-   - curl -s localhost:9000 | docker exec -i prometheus promtool check metrics
+   - travis_retry curl -s localhost:9000 | docker exec -i prometheus promtool check metrics

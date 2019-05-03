@@ -18,7 +18,7 @@ node {
     try {
         stage('Prepare') {
             checkout scm
-            sh "pip install --user -r test/setup/test-requirements.txt"
+            sh "pip install --no-cache --user -r test/setup/test-requirements.txt"
         }
 
         stage('Build') {

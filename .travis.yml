@@ -15,5 +15,5 @@ before_script:
   - pip install --user -r test/setup/test-requirements.txt
 script:
    - npm run jasmine-test
-   - pytest test/end2end/test_*.py
+   - travis_retry pytest test/end2end/test_*.py
    - travis_retry curl -s localhost:9000 | docker exec -i prometheus promtool check metrics

@@ -1,3 +1,12 @@
+## [1.2.4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.2.3...v1.2.4) (2019-07-31)
+
+
+### Features
+
+* **Security:** Corrected known vulnerabilities ([57088a6](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/57088a6))
+
+
+
 ## [1.2.3](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.2.2...v1.2.3) (2019-07-12)
 
 

@@ -15,7 +15,7 @@ async function triggerUpdate () {
 
 /* eslint no-new: "off" */
 new CronJob(config.cron, () => {
-  log.info(`Triggering check`);
+  log.info('Triggering check');
   triggerUpdate();
 }, null, true, 'UTC');
 

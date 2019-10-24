@@ -63,7 +63,7 @@
     "ssl-checker": "^1.2.1"
   },
   "devDependencies": {
-    "conventional-changelog-cli": "2.0.23",
+    "conventional-changelog-cli": "2.0.25",
     "eslint": "^6.0.0",
     "eslint-config-semistandard": "^14.0.0",
     "eslint-config-standard": "^14.0.0",

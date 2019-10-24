@@ -60,7 +60,7 @@
     "moment": "^2.24.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
-    "ssl-checker": "^2.0.0"
+    "ssl-checker": "^2.0.4"
   },
   "devDependencies": {
     "conventional-changelog-cli": "2.0.25",

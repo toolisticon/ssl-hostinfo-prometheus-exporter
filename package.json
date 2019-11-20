@@ -74,6 +74,6 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
     "jasmine": "^3.3.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^2.0.0"
   }
 }

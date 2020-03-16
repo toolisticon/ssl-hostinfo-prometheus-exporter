@@ -5,13 +5,15 @@ const sslChecker = require('ssl-checker');
 const config = require('./lib/config');
 const log = require('./lib/logger');
 const prometheus = require('./lib/prometheus');
+const url = require('./lib/url');
 
 const baseUrl = 'https://http-observatory.security.mozilla.org/api/v1/analyze';
 
-async function triggerScan (hostname) {
+async function triggerScan (hostname, port) {
   const options = {
     method: 'POST',
-    uri: `${baseUrl}?host=${hostname}&rescan=true&hidden=true`
+    uri: `${baseUrl}?host=${hostname}&rescan=true&hidden=true`,
+    port: port
   };
 
   log.info(`Triggering scan for ${hostname}`);
@@ -61,27 +63,32 @@ async function receiveScanResult (hostname, additionalMetadata = {}) {
  * Checks a single url
  *
  * @param {String} hostname - hostname to check
+ * @param {Number} port - port to use
  * @param {Object} additionalMetadata - additional key-value based metadata
  */
-async function updateRouteInfo (hostname, additionalMetadata) {
-  triggerScan(hostname);
+async function updateRouteInfo (hostname, port, additionalMetadata) {
+  triggerScan(hostname, port);
   // defer read results
   setTimeout(() => receiveScanResult(hostname, additionalMetadata), 200);
 }
 /**
  * Checks a list of urls
  *
- * @param {Array} hostnames - hostnames to check
+ * @param {Array} hostEntries - hostnames to check (may include ports ... e.g. example.com:8443)
  * @param {Object} additionalMetadata - additional key-value based metadata
  */
-async function updateRoutesInfo (hostnames, additionalMetadata) {
-  log.info(`Triggering scan for ${hostnames}`);
+async function updateRoutesInfo (hostEntries, additionalMetadata) {
+  log.info(`Triggering scan for ${hostEntries}`);
   // reset data on route update
-  prometheus.updateHosts(hostnames);
-  hostnames.forEach((hostname) => {
-    triggerScan(hostname);
+  const domainList = [];
+  url.extractHostnamesAndPort(hostEntries).forEach((hostEntry) => {
+    domainList.push(hostEntry.domain);
+  });
+  prometheus.updateHosts(domainList);
+  url.extractHostnamesAndPort(hostEntries).forEach((hostEntry) => {
+    triggerScan(hostEntry.domain, hostEntry.port);
     // defer read results
-    setTimeout(() => receiveScanResult(hostname, additionalMetadata), 200);
+    setTimeout(() => receiveScanResult(hostEntry.domain, additionalMetadata), 200);
   });
 }
 
@@ -106,6 +113,7 @@ module.exports = exports = {
   updateRoutesInfo: updateRoutesInfo,
   updateHosts: prometheus.updateHosts,
   resetRouteInfo: prometheus.reset,
+  triggerScan: triggerScan,
   startPrometheusListener: startPrometheusListener,
   logger: log
 };

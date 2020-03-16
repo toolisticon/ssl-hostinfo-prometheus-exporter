@@ -50,7 +50,7 @@ You can override the config via environment variables:
 
 Sample:
 ```
-URLS_TO_CHECK=url1.sample.com,url2.sample.com LOG_LEVEL=INFO CONSOLE_LOG=true node app.js 
+URLS_TO_CHECK=url1.sample.com,url2.sample.com:8443 LOG_LEVEL=INFO CONSOLE_LOG=true node app.js 
 ```
 Will produce the following output:
 ```
@@ -84,6 +84,8 @@ INFO @ 2019-04-02T13:57:43.001Z : Skipping invalid response for mozilla scoring
 INFO @ 2019-04-02T13:57:43.024Z : Skipping invalid response for mozilla scoring
 ```
 and the logs in JSON format within the directy `logs`
+
+>NOTE: You can omit the port, it will default to 443.
 
 ## Troubleshooting
 

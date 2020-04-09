@@ -7,7 +7,7 @@ def is_successful(r):
         assert r.headers['content-type'] == "application/json", \
             "Reponse is not JSON format (%s)" % r.headers.get('content-type','UNKNOWN')
     except AssertionError as e:
-        print e
+        print(e)
         return False
     else:
         return True

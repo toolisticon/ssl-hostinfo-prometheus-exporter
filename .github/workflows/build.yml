@@ -1,0 +1,92 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [10, 12, 13]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node_version: ${{ matrix.node_version }}
+
+    - name: npm install and test
+      run: |
+        npm run clean
+        npm run jasmine-test
+
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: end2end tests
+      run: |
+        pip install -r test/setup/test-requirements.txt
+        npm run clean
+        npm run test
+
+    - name: build image
+      run: |
+        docker build .
+
+  deploy:
+    needs: [test, docker]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: publish release npm package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+          npm publish
+        if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
+
+      - name: publish release docker image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: toolisticon/ssl-hostinfo-prometheus-exporter
+          tags: latest
+        if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
+
+      - name: publish preview npm package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+          PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
+          CURRENT_TIME=$(date +%s)
+          NEW_VERSION=${PACKAGE_VERSION}-build${CURRENT_TIME}
+          npm version $NEW_VERSION --no-git-tag-version
+          npm publish --tag next
+        if: contains( github.ref, 'develop' ) || contains( github.base_ref, 'develop' )
+
+      - name: publish preview docker image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: toolisticon/ssl-hostinfo-prometheus-exporter
+          tags: next
+        if: contains( github.ref, 'develop' ) || contains( github.base_ref, 'develop' )

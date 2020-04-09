@@ -7,10 +7,6 @@
 [![npm downloads](https://img.shields.io/npm/dm/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
 [![npm downloads](https://img.shields.io/npm/dt/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
 [![Docker Stars](https://img.shields.io/docker/stars/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://greenkeeper.io/)
-
-> Still **WIP**
-
 
 ## Usage
 
@@ -50,7 +46,7 @@ You can override the config via environment variables:
 
 Sample:
 ```
-URLS_TO_CHECK=url1.sample.com,url2.sample.com:8443 LOG_LEVEL=INFO CONSOLE_LOG=true node app.js 
+URLS_TO_CHECK=url1.sample.com,url2.sample.com:8443 LOG_LEVEL=INFO CONSOLE_LOG=true node app.js
 ```
 Will produce the following output:
 ```
@@ -66,9 +62,9 @@ Will produce the following output:
 {"pid":65072,"msg":"Skipping invalid response for mozilla scoring","loglevel":"INFO","loglevel_value":30,"@timestamp":"2019-04-02T13:56:21.208Z","host":"MPB-M1.local","log_type":"application","application_type":"service"}
 ```
 
-And 
+And
 ```
-URLS_TO_CHECK=url1.sample.com,url2.sample.com LOG_LEVEL=INFO node app.js 
+URLS_TO_CHECK=url1.sample.com,url2.sample.com LOG_LEVEL=INFO node app.js
 ```
 creates this output:
 ```

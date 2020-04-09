@@ -1,3 +1,13 @@
+## [1.4.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.0...v1.4.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* **Security:** use latest packages to resolve vulnerabilities ([79f24e5](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/79f24e5cdb1eea61e6b19e231b44f324c1d8ca33))
+* **Tests:** Correcting eslint config ([f66169f](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/f66169f2dfe78d60e89a98ff7bef69d672e5a50d))
+
+
+
 # [1.4.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.3.2...v1.4.0) (2020-03-16)
 
 

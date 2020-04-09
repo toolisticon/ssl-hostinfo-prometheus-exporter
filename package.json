@@ -65,7 +65,7 @@
   "devDependencies": {
     "conventional-changelog-cli": "2.0.30",
     "eslint": "^6.0.0",
-    "eslint-config-semistandard": "^14.0.0",
+    "eslint-config-semistandard": "^15.0.0",
     "eslint-config-standard": "^14.0.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jasmine": "^4.1.0",

@@ -3,6 +3,10 @@
   "env": {
     "jasmine": true
   },
+  "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+  },
   "plugins": [
     "jasmine"
   ],

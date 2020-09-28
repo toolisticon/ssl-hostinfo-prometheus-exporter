@@ -1,3 +1,4 @@
+'use strict';
 const CronJob = require('cron').CronJob;
 const pkg = require('./package.json');
 const log = require('./lib/logger');

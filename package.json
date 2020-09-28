@@ -57,7 +57,7 @@
   "dependencies": {
     "cron": "^1.6.0",
     "log4bro": "^3.11.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "ssl-checker": "^2.0.4"

@@ -19,9 +19,10 @@ jobs:
       with:
         node_version: ${{ matrix.node_version }}
 
-    - name: npm install and test
+    - name: npm build and test
       run: |
         npm run clean
+        npm run build
         npm run jasmine-test
 
   docker:
@@ -37,6 +38,7 @@ jobs:
       run: |
         pip install -r test/setup/test-requirements.txt
         npm run clean
+        npm run build
         npm run test
 
     - name: build image

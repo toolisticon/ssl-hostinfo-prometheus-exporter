@@ -31,7 +31,7 @@ RUN export NVM_DIR="$HOME/.nvm" && mkdir -p $NVM_DIR && \
   chmod +x $HOME/.nvm/nvm.sh && echo "export NVM_DIR=\"$HOME/.nvm\"" >> ~/.bashrc && echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"  # This loads nvm" >> ~/.bashrc && \
   source $NVM_DIR/nvm.sh && nvm install v10 && nvm use v10 && \
   chown -R default $HOME && \
-  rm -rf $HOME/node_modules/ && cd $HOME && npm i  && \
+  rm -rf $HOME/node_modules/ && cd $HOME && \
   /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
   mv $HOME/bin/* /usr/local/bin/ && \
   /usr/bin/fix-permissions /usr/local/bin/* && chmod +x /usr/local/bin/* && \

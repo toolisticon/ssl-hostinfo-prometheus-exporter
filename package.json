@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "ssl-hostinfo-prom": "app.js"
+    "ssl-hostinfo-prom": "dist/app.js"
   },
   "scripts": {
     "clean": "npm i",
+    "build": "webpack --config webpack.config.js --progress",
     "debug": "node --inspect-brk index.js",
     "start": "node index.js",
     "watch": "nodemon node index.js",
@@ -63,6 +64,7 @@
     "ssl-checker": "^2.0.4"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "conventional-changelog-cli": "^2.1.0",
     "eslint": "^7.7.0",
     "eslint-config-semistandard": "^15.0.0",
@@ -74,6 +76,8 @@
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-standard": "^4.0.0",
     "jasmine": "^3.3.1",
-    "nodemon": "^2.0.0"
+    "nodemon": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }

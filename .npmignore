@@ -1,12 +1,14 @@
+# Build
 /tmp
 /bin
-
 /target
 /lib
 /node_modules
+# Div
 *.log
 /examples
 /test
 /*.tgz
 /tools
+# Python
 /.pytest_cache/

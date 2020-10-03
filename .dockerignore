@@ -1,4 +1,9 @@
-lib
-node_modules
-scripts
-test
+
+Dockerfile
+/coverage
+/docs
+/lib
+/node_modules
+/spec
+/scripts
+/test

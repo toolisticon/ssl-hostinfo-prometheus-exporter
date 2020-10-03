@@ -12,7 +12,7 @@
     "debug": "node --inspect-brk index.js",
     "start": "node index.js",
     "watch": "nodemon node index.js",
-    "lint": "eslint --fix .",
+    "lint": "eslint --fix --ignore-pattern=dist .",
     "pretest": "npm run lint",
     "test": "npm run jasmine-test && npm run end2end-test",
     "jasmine-test": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",

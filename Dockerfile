@@ -29,7 +29,7 @@ RUN yum -y update && rm -rf /tmp/setup && yum clean all && rm -rf /var/cache/yum
 RUN export NVM_DIR="$HOME/.nvm" && mkdir -p $NVM_DIR && \
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash && \
   chmod +x $HOME/.nvm/nvm.sh && echo "export NVM_DIR=\"$HOME/.nvm\"" >> ~/.bashrc && echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"  # This loads nvm" >> ~/.bashrc && \
-  source $NVM_DIR/nvm.sh && nvm install v12 && nvm use v12 && \
+  source $NVM_DIR/nvm.sh && nvm install v14 && nvm use v14 && \
   chown -R default $HOME && \
   rm -rf $HOME/node_modules/ && cd $HOME && \
   /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \

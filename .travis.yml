@@ -6,15 +6,14 @@ node_js:
   - "14"
 services:
   - docker
-
 install:
-  - docker build -t toolisticon/ssl-hostinfo-prometheus-exporter .
-  - cd test/setup && docker-compose up -d && cd ../..
   - npm run clean
 before_script:
   - pip install --user -r test/setup/test-requirements.txt
 script:
    - npm run build
    - npm run jasmine-test
+   - docker build -t toolisticon/ssl-hostinfo-prometheus-exporter .
+   - (cd test/setup && docker-compose up -d)
    - travis_retry pytest test/end2end/test_*.py
    - travis_retry curl -s localhost:9000 | docker exec -i prometheus promtool check metrics

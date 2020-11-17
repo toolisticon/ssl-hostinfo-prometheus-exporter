@@ -1,3 +1,18 @@
+## [1.4.4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.3...v1.4.4) (2020-11-17)
+
+
+### Bug Fixes
+
+* **Execution:** Enable strict mode ([87e8dc4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/87e8dc4b99ad1a623992f202a63d5dda94ea03e2)), closes [#98](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/98)
+
+
+### Features
+
+* **Bundle:** Bundle von js file for the app ([6543a0b](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/6543a0b2cbc2b0e60a4640f4e6d89449379d9cbb)), closes [#98](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/98)
+* **Runtime:** Use NodeJS 12 in Docker ([b50b74f](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/b50b74f91a7f5c498f3d8a5ba8de7191356a960b))
+
+
+
 ## [1.4.3](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.2...v1.4.3) (2020-09-25)
 
 

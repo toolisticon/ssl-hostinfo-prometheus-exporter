@@ -2,4 +2,5 @@
 
 NVM_DIR="$HOME/.nvm"
 source $NVM_DIR/nvm.sh
-node dist/app.js
+# TODO fix webpack build, see https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/98
+node app.js

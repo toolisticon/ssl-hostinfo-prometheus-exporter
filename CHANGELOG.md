@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.0.0...v2.0.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* **NPM:** Use correct bin ([58d5674](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/58d5674b639f975bb23fc21dbe5432203b41e77d))
+
+
+
 # [2.0.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.4...v2.0.0) (2021-04-23)
 
 

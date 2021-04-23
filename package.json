@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "ssl-hostinfo-prom": "dist/app.js"
+    "ssl-hostinfo-prom": "app.js"
   },
   "scripts": {
     "clean": "npm i",

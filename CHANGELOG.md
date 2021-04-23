@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.4...v2.0.0) (2021-04-23)
+
+
+### Bug Fixes
+
+* **Build:** Don't use webpack build now ([7f5aed5](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/7f5aed50382f47df112ce5d8160e2673d1744b65)), closes [#98](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/98)
+
+
+### Features
+
+* **Dependencies:** Replace moment.js ([a98b31b](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a98b31b01d0f508318520274ecbda4b29c693121))
+* **Docker:** Switch to UBI image ([a039a2c](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a039a2c3575e1367bb7276ce811714b7a1f2d5ae))
+
+
+
 ## [1.4.4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v1.4.3...v1.4.4) (2020-11-17)
 
 

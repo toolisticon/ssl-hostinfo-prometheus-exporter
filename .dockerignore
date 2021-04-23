@@ -2,8 +2,8 @@
 Dockerfile
 /coverage
 /docs
-/lib
 /node_modules
+/reports
 /spec
 /scripts
 /test

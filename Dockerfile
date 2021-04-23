@@ -1,11 +1,11 @@
-FROM centos/s2i-base-centos7
-
+FROM registry.access.redhat.com/ubi8/ubi-init:latest
 ENV SUMMARY="SSL verify"
 ENV DESCRIPTION="Application runtime for SSL Verifier"
 ENV AUTHOR="Holisticon AG"
 ENV TZ="Europe/Berlin"
 ENV NVM_DIR="$HOME/.nvm"
 ENV CONSOLE_LOG="true"
+ENV HOME=/opt/app
 
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \
@@ -19,6 +19,8 @@ LABEL summary="$SUMMARY" \
 
 USER root
 
+RUN mkdir -p $HOME 
+
 # Copy code
 ADD . $HOME
 
@@ -30,14 +32,8 @@ RUN export NVM_DIR="$HOME/.nvm" && mkdir -p $NVM_DIR && \
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash && \
   chmod +x $HOME/.nvm/nvm.sh && echo "export NVM_DIR=\"$HOME/.nvm\"" >> ~/.bashrc && echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"  # This loads nvm" >> ~/.bashrc && \
   source $NVM_DIR/nvm.sh && nvm install v14 && nvm use v14 && \
-  chown -R default $HOME && \
-  rm -rf $HOME/node_modules/ && cd $HOME && \
-  /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
+  rm -rf $HOME/node_modules/ && cd $HOME && npm i && \
   mv $HOME/bin/* /usr/local/bin/ && \
-  /usr/bin/fix-permissions /usr/local/bin/* && chmod +x /usr/local/bin/* && \
- /usr/bin/fix-permissions ${NVM_DIR}/* && /usr/bin/fix-permissions ${HOME}/* && \
- chown -R $USER:$(id -gn $USER) /opt/app-root/src/.config
-
-USER 1000
+  chmod +x /usr/local/bin/* && chown -R $USER:$(id -gn $USER) $HOME
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

@@ -58,10 +58,9 @@
   "dependencies": {
     "cron": "^1.6.0",
     "date-fns": "^2.21.1",
-    "log4bro": "^3.11.0",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "ssl-checker": "^2.0.4"
+    "log4bro": "^3.18.0",
+    "node-fetch": "^2.6.1",
+    "ssl-checker": "^2.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

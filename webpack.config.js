@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack'); // to access built-in plugins
+const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -7,6 +8,7 @@ module.exports = {
   entry: './app.js',
   mode: 'development',
   target: 'node',
+  externals: [nodeExternals()],
   module: {
     rules: [
       {

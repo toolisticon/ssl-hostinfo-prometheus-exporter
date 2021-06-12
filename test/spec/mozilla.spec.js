@@ -15,6 +15,6 @@ describe('mozilla', () => {
     setTimeout(async () => {
       await mozilla.receiveScanResult(hostname, {});
       done();
-    }, 200);
+    }, 500);
   });
 });

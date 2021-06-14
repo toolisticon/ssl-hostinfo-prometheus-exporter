@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.0.1...v2.1.0) (2021-06-14)
+
+
+### Bug Fixes
+
+* **Build:** Corrected webpack build ([beb60d7](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/beb60d71e8e2c683ba5b95b737870e9a731789d2))
+* **Docker:** Corrected docker build errors ([cbdddb9](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/cbdddb9c6edd43a613fbacbae4e694f283c00414))
+* **Mozilla:** Use node-featch for HTTP ([5b030fa](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/5b030fa35b073af22e905fa4ccc3b527d6036df8))
+* **Security:** Resolve dependency issues ([a8589cb](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/a8589cbf2891380c6f4876477093cfc791694873))
+
+
+
 ## [2.0.1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.0.0...v2.0.1) (2021-04-23)
 
 

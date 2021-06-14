@@ -19,7 +19,7 @@
     "jasmine-test:watch": "nodemon jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
     "jasmine-test:debug": "node --inspect-brk -i node_modules/jasmine/bin/jasmine.js spec/prometheus.spec.js",
     "preend2end-test": "docker build -t toolisticon/ssl-hostinfo-prometheus-exporter . && cd test/setup && docker-compose up -d --force-recreate && sleep 90",
-    "end2end-test": "pytest test/end2end/test_*.py --junitxml=target/reports/junit.xml",
+    "end2end-test": "pytest test/end2end/test_*.py --junitxml=target/reports/junit.xml && curl -s localhost:9000 | docker exec -i prometheus promtool check metrics",
     "postend2end-test": "cd test/setup && docker-compose stop && docker-compose rm -f -s -v && docker volume prune -f",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "changelog:add": "git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",

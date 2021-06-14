@@ -23,6 +23,6 @@ def test_structure():
     data = requests.get(url).json()
     assert data['status'] == 'success'
     metricsResults = data['data']['result']
-    assert len(metricsResults) == 2
+    assert len(metricsResults) == 2, 'Expecting two mozilla results'
     assert metricsResults[0]['metric']['__name__'] == 'security_ssl_mozilla_observatory'
     assert metricsResults[1]['metric']['__name__'] == 'security_ssl_mozilla_observatory'

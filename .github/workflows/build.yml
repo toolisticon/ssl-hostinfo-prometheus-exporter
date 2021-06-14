@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [12, 14]
+        node_version: [14,16]
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
@@ -39,7 +39,7 @@ jobs:
         pip install -r test/setup/test-requirements.txt
         npm run clean
         npm run build
-        npm run test
+        npm run end2end-test
 
     - name: build image
       run: |
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: publish release npm package
         env:

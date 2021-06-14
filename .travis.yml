@@ -2,14 +2,12 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "12"
   - "14"
+  - "16"
 services:
   - docker
 install:
   - npm run clean
-before_script:
-  - pip install --user -r test/setup/test-requirements.txt
 script:
    - npm run build
    - npm run jasmine-test

@@ -67,7 +67,9 @@ describe('prometheus', () => {
     it('should convert data objects with nesting and dates', () => {
       prometheus.addMozillaMetric(validData);
       const result = prometheus.renderMetrics();
-      expect(result.indexOf('security_ssl_mozilla_observatory{algorithm_version="2",end_time="2019-01-18T09:46:07.000+01:00",grade="D",hidden="false",likelihood_indicator="MEDIUM",scan_id="9783173",score="35",start_time="2019-01-18T09:46:02.000+01:00",state="FINISHED",status_code="404",tests_failed="3",tests_passed="9",tests_quantity="12",url="sub.domain-sample.com",} NaN') >= 0).toBeTruthy();
+      expect(result.indexOf('security_ssl_mozilla_observatory{algorithm_version="2",end_time="2019-01-18T09:46:07.000') >= 0).toBeTruthy();
+      expect(result.indexOf('grade="D",hidden="false",likelihood_indicator="MEDIUM",scan_id="9783173",score="35",start_time="2019-01-18T09:46:02.000') >= 0).toBeTruthy();
+      expect(result.indexOf('state="FINISHED",status_code="404",tests_failed="3",tests_passed="9",tests_quantity="12",url="sub.domain-sample.com",} NaN') >= 0).toBeTruthy();
     });
   });
   describe('expire details', () => {

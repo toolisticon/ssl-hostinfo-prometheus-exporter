@@ -1,63 +1,10 @@
 const http = require('http');
-const request = require('request-promise-native');
-const sslChecker = require('ssl-checker');
 
 const config = require('./lib/config');
 const log = require('./lib/logger');
+const mozilla = require('./lib/mozilla');
 const prometheus = require('./lib/prometheus');
 const url = require('./lib/url');
-
-const baseUrl = 'https://http-observatory.security.mozilla.org/api/v1/analyze';
-
-async function triggerScan (hostname, port) {
-  const options = {
-    method: 'POST',
-    uri: `${baseUrl}?host=${hostname}&rescan=true&hidden=true`,
-    port: port
-  };
-
-  log.info(`Triggering scan for ${hostname}`);
-  request(options);
-}
-
-async function receiveScanResult (hostname, additionalMetadata = {}) {
-  log.info(`Reading scan results for ${hostname}`);
-  const options = {
-    method: 'GET',
-    uri: `${baseUrl}?host=${hostname}`,
-    json: true
-  };
-  const response = await request(options);
-  if (response && response.score) {
-    response.url = hostname;
-    response.quantile = response.score;
-    prometheus.addMozillaMetric(response, additionalMetadata);
-  } else {
-    log.info('Skipping invalid response for mozilla scoring');
-  }
-  // add cert metric
-  sslChecker(hostname).then((result) => {
-    result.url = hostname;
-    result.status = 200;
-    result.quantile = result.status;
-    prometheus.addDetailsMetric(result, additionalMetadata);
-    prometheus.addExpireMetric({ url: result.url, quantile: result.daysRemaining }, additionalMetadata);
-  }).catch((err) => {
-    const result = {
-      url: hostname,
-      valid: false
-    };
-    if (err.code === 'ENOTFOUND') {
-      result.status = 404;
-      result.quantile = result.status;
-      prometheus.addExpireMetric(result, additionalMetadata);
-    } else {
-      result.status = 400;
-      result.quantile = result.status;
-      prometheus.addExpireMetric(result, additionalMetadata);
-    }
-  });
-}
 
 /**
  * Checks a single url
@@ -67,9 +14,9 @@ async function receiveScanResult (hostname, additionalMetadata = {}) {
  * @param {Object} additionalMetadata - additional key-value based metadata
  */
 async function updateRouteInfo (hostname, port, additionalMetadata) {
-  triggerScan(hostname, port);
+  mozilla.triggerScan(hostname, port);
   // defer read results
-  setTimeout(() => receiveScanResult(hostname, additionalMetadata), 200);
+  setTimeout(() => mozilla.receiveScanResult(hostname, additionalMetadata), 200);
 }
 /**
  * Checks a list of urls
@@ -86,9 +33,9 @@ async function updateRoutesInfo (hostEntries, additionalMetadata) {
   });
   prometheus.updateHosts(domainList);
   url.extractHostnamesAndPort(hostEntries).forEach((hostEntry) => {
-    triggerScan(hostEntry.domain, hostEntry.port);
+    mozilla.triggerScan(hostEntry.domain, hostEntry.port);
     // defer read results
-    setTimeout(() => receiveScanResult(hostEntry.domain, additionalMetadata), 200);
+    setTimeout(() => mozilla.receiveScanResult(hostEntry.domain, additionalMetadata), 200);
   });
 }
 
@@ -113,7 +60,7 @@ module.exports = exports = {
   updateRoutesInfo: updateRoutesInfo,
   updateHosts: prometheus.updateHosts,
   resetRouteInfo: prometheus.reset,
-  triggerScan: triggerScan,
+  triggerScan: mozilla.triggerScan,
   startPrometheusListener: startPrometheusListener,
   logger: log
 };

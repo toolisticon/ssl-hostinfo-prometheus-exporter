@@ -6,8 +6,8 @@
 [![npm version](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
 [![npm downloads](https://img.shields.io/npm/dm/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
 [![npm downloads](https://img.shields.io/npm/dt/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://www.npmjs.com/package/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)
-[![Docker Stars](https://img.shields.io/docker/stars/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
-
+[![Docker Stars](https://img.shields.io/docker/stars/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)test/github/toolisticon/ssl-hostinfo-prometheus-exporter)
+[![Known Vulnerabilities](https://snyk.io/test/github/toolisticon/ssl-hostinfo-prometheus-exporter/badge.svg)](https://snyk.io/test/github/toolisticon/ssl-hostinfo-prometheus-exporter)
 ## Usage
 
 Install the app first

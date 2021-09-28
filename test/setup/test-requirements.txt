@@ -4,6 +4,6 @@ flake8-print==3.0.1
 yamllint
 testinfra
 requests
-pytest
+pytest==3.0.5
 pytest-curl-report
 six>=1.10.0

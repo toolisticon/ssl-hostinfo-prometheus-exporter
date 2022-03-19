@@ -6,6 +6,7 @@ coverage
 npm-debug.log
 target
 __pycache__
+.cache
 *.pyc
 logs/
 dist

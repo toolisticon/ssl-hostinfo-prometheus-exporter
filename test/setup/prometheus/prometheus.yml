@@ -21,10 +21,10 @@ rule_files:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'ssl-stats'
-    metrics_path: /
+    metrics_path: ''
     static_configs:
     - targets:
-      - verifier:9000
+      - sslverifier:9000
 
   - job_name: 'prometheus'
 

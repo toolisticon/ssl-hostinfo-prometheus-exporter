@@ -1,3 +1,15 @@
+## [2.1.3](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.2...v2.1.3) (2022-03-19)
+
+
+### Bug Fixes
+
+* **Build:** Corrected packaging ([7a229f1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/7a229f1825f223e563240b589a5ea3bc6d8eae73)), closes [#98](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/98)
+* **Stats:** Correct prometheus stats export error ([c736017](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/c7360172862ec6cadd72b4b2907362893ed92dce))
+* upgrade date-fns from 2.25.0 to 2.28.0 ([bbfc8ec](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/bbfc8ec40d2482fec02bf9fd9d0555cc0fbc13e0))
+* upgrade node-fetch from 2.6.5 to 2.6.7 ([82234f7](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/82234f779fb5e3cdf60f061aed571b27a5053431))
+
+
+
 ## [2.1.2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.1...v2.1.2) (2021-09-28)
 
 

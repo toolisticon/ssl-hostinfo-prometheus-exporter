@@ -36,7 +36,6 @@ jobs:
 
     - name: end2end tests
       run: |
-        pip install -r test/setup/test-requirements.txt
         npm run clean
         npm run build
         npm run end2end-test

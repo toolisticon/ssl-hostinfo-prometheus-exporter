@@ -55,12 +55,12 @@ function startPrometheusListener () {
 }
 
 module.exports = exports = {
-  config: config,
-  updateRouteInfo: updateRouteInfo,
-  updateRoutesInfo: updateRoutesInfo,
+  config,
+  updateRouteInfo,
+  updateRoutesInfo,
   updateHosts: prometheus.updateHosts,
   resetRouteInfo: prometheus.reset,
   triggerScan: mozilla.triggerScan,
-  startPrometheusListener: startPrometheusListener,
+  startPrometheusListener,
   logger: log
 };

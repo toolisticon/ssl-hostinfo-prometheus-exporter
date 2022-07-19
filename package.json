@@ -73,7 +73,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "conventional-changelog-cli": "^2.1.1",
     "eslint": "^8.1.0",
-    "eslint-config-semistandard": "^16.0.0",
+    "eslint-config-semistandard": "^17.0.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jasmine": "^4.1.2",

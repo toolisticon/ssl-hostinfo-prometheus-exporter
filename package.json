@@ -80,7 +80,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "jasmine": "^3.10.0",
+    "jasmine": "^4.2.1",
     "nodemon": "^2.0.14",
     "webpack": "^5.60.0",
     "webpack-bundle-analyzer": "^4.5.0",

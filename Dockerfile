@@ -6,7 +6,7 @@ ENV TZ="Europe/Berlin"
 ENV NVM_DIR="$HOME/.nvm"
 ENV CONSOLE_LOG="true"
 ENV HOME=/opt/app
-ENV NODE_VERSION="16"
+ENV NODE_VERSION="18"
 
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \

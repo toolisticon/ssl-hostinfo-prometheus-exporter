@@ -1,3 +1,7 @@
+## [2.1.6](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.5...v2.1.6) (2022-08-29)
+
+
+
 ## [2.1.5](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.3...v2.1.5) (2022-06-03)
 
 

@@ -67,7 +67,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "axios": "^0.27.2",
+    "axios": "^1.0.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "clean-webpack-plugin": "^4.0.0",

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 const CronJob = require('cron').CronJob;
 const pkg = require('./package.json');

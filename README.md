@@ -1,6 +1,7 @@
 # Monitor SSL certificates in Prometheus
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+[![CI](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/actions/workflows/build.yml/badge.svg)](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/actions/workflows/build.yml)
 [![Build Status](https://travis-ci.org/toolisticon/ssl-hostinfo-prometheus-exporter.svg?branch=master)](https://travis-ci.org/toolisticon/ssl-hostinfo-prometheus-exporter)
 [![Docker Build Status](https://img.shields.io/docker/automated/toolisticon/ssl-hostinfo-prometheus-exporter.svg)](https://hub.docker.com/r/toolisticon/ssl-hostinfo-prometheus-exporter/)
 [![npm version](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter.svg)](https://badge.fury.io/js/%40toolisticon%2Fssl-hostinfo-prometheus-exporter)

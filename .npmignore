@@ -2,7 +2,6 @@
 /tmp
 /bin
 /target
-/lib
 /node_modules
 # Div
 *.log

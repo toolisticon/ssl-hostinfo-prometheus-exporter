@@ -1,3 +1,14 @@
+## [2.1.7](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.6...v2.1.7) (2022-11-12)
+
+
+### Bug Fixes
+
+* **NPM:** Add shebang exec line ([3a8ea2e](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/3a8ea2eee13a1a8dc65eaf1955629d3eadf4f45b)), closes [#471](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/471)
+* **Packaging:** Corrected package exclude for libs ([3f5e408](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/3f5e40831ef78ad29f2866ed3b272a82ea009769)), closes [#471](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/471)
+* upgrade date-fns from 2.29.2 to 2.29.3 ([9bfa2fa](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/9bfa2faf2b4accfc245236d6e235b9021ce7fd7c))
+
+
+
 ## [2.1.6](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.5...v2.1.6) (2022-08-29)
 
 

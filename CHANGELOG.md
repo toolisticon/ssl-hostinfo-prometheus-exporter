@@ -1,3 +1,12 @@
+## [2.1.8](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.7...v2.1.8) (2023-02-04)
+
+
+### Bug Fixes
+
+* upgrade node-fetch from 2.6.7 to 2.6.8 ([#509](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/issues/509)) ([658f989](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/658f989f8425d490c813dace18988e9eab4106bb))
+
+
+
 ## [2.1.7](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.6...v2.1.7) (2022-11-12)
 
 

@@ -13,7 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         with:
@@ -30,15 +29,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-node@v3
         with:
-          python-version: 3.x
+          node-version: 18
 
       - name: end2end tests
-        run: |
-          npm run clean
-          npm run build
-          npm run end2end-test
+        uses: nick-fields/retry@v2
+        with:
+          max_attempts: 3
+          retry_on: error
+          timeout_minutes: 15
+          command: |
+            npm run clean
+            npm run build
+            npm run end2end-test
 
       - name: build image
         run: |

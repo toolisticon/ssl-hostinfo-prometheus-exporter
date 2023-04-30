@@ -5,16 +5,14 @@ const hostname = 'google.com';
 describe('mozilla', () => {
   /* eslint no-debugger: "off" */
   debugger;
-  beforeEach(async (done) => {
+  beforeEach(async () => {
     await mozilla.triggerScan(hostname, 443);
-    done();
   });
 
-  it('should get mozilla stats', (done) => {
+  it('should get mozilla stats',async () => {
     // defer read results
     setTimeout(async () => {
       await mozilla.receiveScanResult(hostname, {});
-      done();
     }, 500);
   });
 });

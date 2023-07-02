@@ -1,6 +1,8 @@
 name: CI
 
-on: [push]
+on:
+  merge_group:
+  push:
 
 jobs:
   test:

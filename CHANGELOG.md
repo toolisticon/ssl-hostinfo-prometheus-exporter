@@ -1,3 +1,29 @@
+## [2.1.13](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.12...v2.1.13) (2024-06-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cron to v2.4.0 ([7c6201e](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/7c6201e668109a35d3c8625a96755fc2f376736e))
+* **deps:** update dependency cron to v2.4.1 ([0f3c091](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/0f3c0910c24b288836451f6f3cb30df37c73df85))
+* **deps:** update dependency cron to v2.4.3 ([c24bda0](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/c24bda0d0ce1c8f2dc5b373ad4e937fc14630e20))
+* **deps:** update dependency cron to v2.4.4 ([dce0223](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/dce022305fb35481f3c3d920ab5b5689dc9ed185))
+* **deps:** update dependency cron to v3 ([8c622cb](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/8c622cb4288fe9053afd88aa35eae2bb2b92f494))
+* **deps:** update dependency cron to v3.1.0 ([f2f54fa](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/f2f54fa6141d87e8bea74414fcfd1910b9cb9656))
+* **deps:** update dependency cron to v3.1.1 ([27103e2](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/27103e229aec7268735e794225b76d6cfae6655a))
+* **deps:** update dependency cron to v3.1.2 ([4554081](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/455408112fd03046f1c8a66ee745cf3d3063cfd5))
+* **deps:** update dependency cron to v3.1.3 ([18228b6](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/18228b60fcc560e183c1356faa2d85f4a52e10cb))
+* **deps:** update dependency cron to v3.1.4 ([4d1ec50](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/4d1ec5066adefd8338bcfdacddc4b17d0ba2d292))
+* **deps:** update dependency cron to v3.1.5 ([b8c756a](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/b8c756a4a876ed3b727f3de410b5e536ecffc631))
+* **deps:** update dependency cron to v3.1.6 ([be31dbf](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/be31dbf3da254997957ff78b75069131228abffe))
+* **deps:** update dependency cron to v3.1.7 ([cadaee4](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/cadaee481e504e49de271f69d65f9fec1e490411))
+* **deps:** update dependency node-fetch to v2.6.13 ([2deedeb](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/2deedebfb329dd4fda57428339314279148a7be8))
+* **deps:** update dependency node-fetch to v2.7.0 ([cd1670c](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/cd1670c51724257286663a3db3e6c4fd6566ce8d))
+* **deps:** update dependency ssl-checker to v2.0.10 ([bb3672a](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/bb3672aaaa9166ce04352671b8a05c7de791142b))
+* **deps:** update dependency ssl-checker to v2.0.9 ([9c696c1](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/9c696c1ff7930348b7f93a5dc5abba7c29cfd795))
+* **Security:** update dependencies ([67e2429](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/commit/67e2429843fa413748f3106ec1ce8b37fcadb757))
+
+
+
 ## [2.1.12](https://github.com/toolisticon/ssl-hostinfo-prometheus-exporter/compare/v2.1.11...v2.1.12) (2023-07-02)
 
 

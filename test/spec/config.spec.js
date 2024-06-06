@@ -1,4 +1,3 @@
-
 describe('config', () => {
   /* eslint no-debugger: "off" */
   debugger;

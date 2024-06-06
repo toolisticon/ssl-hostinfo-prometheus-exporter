@@ -9,7 +9,7 @@ describe('mozilla', () => {
     await mozilla.triggerScan(hostname, 443);
   });
 
-  it('should get mozilla stats',async () => {
+  it('should get mozilla stats', async () => {
     // defer read results
     setTimeout(async () => {
       await mozilla.receiveScanResult(hostname, {});
